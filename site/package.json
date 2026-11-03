@@ -1,0 +1,22 @@
+{
+  "name": "literature-atlas-engine",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host localhost",
+    "build": "vite build",
+    "preview": "vite preview --host localhost",
+    "test": "node --test scripts/*.test.mjs src/*.test.js",
+    "format:check": "prettier --check 'src/*.{jsx,js}'"
+  },
+  "dependencies": {
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.1",
+    "prettier": "3.7.4",
+    "vite": "8.0.9"
+  }
+}

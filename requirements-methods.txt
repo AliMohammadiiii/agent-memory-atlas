@@ -1,0 +1,4 @@
+# Additional isolated server method-study packages; original analytics pins stay unchanged.
+igraph==0.11.9
+leidenalg==0.10.2
+texttable==1.7.0

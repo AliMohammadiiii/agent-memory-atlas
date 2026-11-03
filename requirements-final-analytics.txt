@@ -1,0 +1,10 @@
+# Measured server runtime; recorded for reproducibility, not an instruction to mutate the live MBSE venv.
+# Missing packages go --no-deps into the isolated vendor overlay only.
+numpy==2.2.6
+scipy==1.18.1
+scikit-learn==1.7.2
+umap-learn==0.5.9.post2
+hdbscan==0.8.44
+networkx==3.7
+numba==0.68.0
+pynndescent==0.6.0

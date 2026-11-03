@@ -1,0 +1,49 @@
+snapshot: 2026-11-01-phase2
+seed_snapshot: 2026-11-01-checkpoint-1
+cutoff: '2026-11-01'
+keyword_start_year: 2023
+keyword_search_fields: title_and_abstract
+sample_size: 60
+sample_random_seed: 20261101
+calibration_size: 40
+validation_size: 20
+threshold_rule: maximum_precision_subject_to_calibration_recall_at_least_0.90_ties_highest_threshold
+inclusion_definition: >-
+  Include a work whose main contribution studies how LLM-based agents store,
+  revise, govern, retrieve, forget, or evaluate persistent memory across
+  interactions. Include direct methods or theory anchors explicitly used to
+  study that problem. Exclude ordinary model pretraining, hardware memory,
+  generic static-document RAG, and generic personalization without persistent
+  agent memory unless a documented direct-method connection is present.
+borderline_margin: 0.04
+seed_groups_for_centroid: [A, B, C]
+queries:
+  - LLM agent long-term memory
+  - memory update conflict LLM agent
+  - knowledge update conversational memory benchmark
+  - personalization memory scope preference LLM
+  - memory governance agent
+  - belief revision large language model
+  - defeasible reasoning language model exceptions
+  - temporal knowledge graph agent memory
+  - memory deletion forgetting LLM agent
+  - clarification question ambiguity LLM agent memory
+api:
+  openalex_page_size: 200
+  s2_page_size: 1000
+  keyword_page_size: 100
+  transient_attempts: 3
+  missing_seed_retry_attempts: 1
+  arxiv_min_interval_seconds: 3.1
+relevance:
+  primary_gateway: 9router
+  primary_model: cx/gpt-6-luna[1m]
+  fallback_gateway: openrouter
+  fallback_model: nvidia/nemotron-3.5-super-vl:free
+  require_exact_evidence_quote: true
+  max_output_tokens: 600
+  temperature: 0
+  batch_size: 20
+  minimum_seconds_between_requests: 3.1
+  batch_output_tokens: 4000
+  abstract_input_max_chars: 12000

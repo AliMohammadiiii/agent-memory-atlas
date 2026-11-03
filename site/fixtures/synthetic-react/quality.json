@@ -1,0 +1,40 @@
+{
+  "abstract_missing": [],
+  "abstract_withheld": [],
+  "abstract_withheld_privacy": [],
+  "coverage": {
+    "abstract_available": 3,
+    "abstract_displayable": 3,
+    "abstract_permission_withheld": 0,
+    "abstract_privacy_withheld": 0,
+    "retained": 3
+  },
+  "excluded": [],
+  "license_limits": "Withheld evidence is not absence of evidence.",
+  "one_source": [
+    "SYN-001",
+    "SYN-002",
+    "SYN-003"
+  ],
+  "owner_label_status": "pending: precision cannot be estimated before owner labels",
+  "parentage": {
+    "parent_files_sha256": {},
+    "parents": [],
+    "private_parent_inventories": {},
+    "snapshot": null
+  },
+  "retracted": [],
+  "sampling": {
+    "owner_seed": 20261103,
+    "requested_owner_counts": {
+      "ADJACENT": 30,
+      "CORE": 40,
+      "EXCLUDE": 30
+    },
+    "requested_spot_counts": {
+      "ADJACENT": 30,
+      "CORE": 30
+    },
+    "spot_check_seed": 20261104
+  }
+}

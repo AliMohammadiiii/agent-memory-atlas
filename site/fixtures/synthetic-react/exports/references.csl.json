@@ -1,0 +1,20 @@
+[
+  {
+    "author": [],
+    "id": "SYN-001",
+    "title": "Synthetic episodic retrieval",
+    "type": "document"
+  },
+  {
+    "author": [],
+    "id": "SYN-002",
+    "title": "Synthetic memory indexing",
+    "type": "document"
+  },
+  {
+    "author": [],
+    "id": "SYN-003",
+    "title": "Synthetic evidence records",
+    "type": "document"
+  }
+]

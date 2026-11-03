@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "snapshot": "synthetic-v1",
+  "provenance": "Fictional examples created for this offline demonstration; no real papers or provider output.",
+  "query": {"text": "episodic retrieval", "vector": [1, 0, 0]},
+  "papers": [
+    {"id": "SYN-001", "title": "Synthetic episodic retrieval", "vector": [1, 0, 0], "pages": [{"page": 2, "text": "Episodic retrieval selects a stored observation."}], "cites": ["SYN-002"]},
+    {"id": "SYN-002", "title": "Synthetic memory indexing", "vector": [0.8, 0.6, 0], "pages": [{"page": 3, "text": "An index can locate observations for later use."}], "cites": ["SYN-003"]},
+    {"id": "SYN-003", "title": "Synthetic evidence records", "vector": [0, 0.6, 0.8], "pages": [{"page": 1, "text": "Evidence records preserve a page reference."}], "cites": []}
+  ]
+}

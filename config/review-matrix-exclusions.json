@@ -1,0 +1,18 @@
+{
+  "review_date": "2026-11-02",
+  "method": "Manual inspection of the specified original PDF pages against the frozen capability definitions. These overrides do not alter the preserved model output.",
+  "exclusions": [
+    {
+      "paper_id": "https://openalex.org/W7153757057",
+      "capability": "revoke",
+      "page": 3,
+      "reason": "The extracted span combines a section heading with a sentence about automatic dissolution; it does not establish the requested explicit revocation operation."
+    },
+    {
+      "paper_id": "https://openalex.org/W7162696183",
+      "capability": "human_written_data",
+      "page": 6,
+      "reason": "Human labeling and curation of benchmark answers do not establish that the evaluation data were explicitly human-written."
+    }
+  ]
+}

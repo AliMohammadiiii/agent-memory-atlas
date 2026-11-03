@@ -1,0 +1,40 @@
+{
+  "themes": [
+    {
+      "id": "A",
+      "label": "Scoped and revised memory",
+      "color": "#246777",
+      "basis": "owner supplied seed group"
+    },
+    {
+      "id": "B",
+      "label": "Lifecycle and governance",
+      "color": "#9a6b2e",
+      "basis": "owner supplied seed group"
+    },
+    {
+      "id": "C",
+      "label": "Systems and evaluation",
+      "color": "#42658d",
+      "basis": "owner supplied seed group"
+    },
+    {
+      "id": "D",
+      "label": "Preferences and personalization",
+      "color": "#79588c",
+      "basis": "owner supplied seed group"
+    },
+    {
+      "id": "E",
+      "label": "Edit propagation and exceptions",
+      "color": "#945661",
+      "basis": "owner supplied seed group"
+    },
+    {
+      "id": "F",
+      "label": "Theory and methods",
+      "color": "#67766c",
+      "basis": "owner supplied seed group"
+    }
+  ]
+}

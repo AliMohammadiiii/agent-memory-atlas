@@ -1,0 +1,80 @@
+{
+  "atlas": {
+    "defaultView": "citation",
+    "description": "All papers, page passages, vectors and citations are fictional.",
+    "id": "synthetic-atlas",
+    "model": {
+      "fallback": "cx/gpt-6.1-sol",
+      "label": "Grounded literature assistant",
+      "primary": "cx/gpt-6-luna[1m]"
+    },
+    "projectAbstract": {
+      "placeholder": true,
+      "text": "Synthetic demonstration only; no real research evidence."
+    },
+    "route": "/agent-memory/",
+    "title": "SYNTHETIC DATA — Agent Memory Atlas"
+  },
+  "counts": {
+    "abstract_papers": 3,
+    "adjacent": 0,
+    "analysis_papers": 0,
+    "citation_placeholders": 0,
+    "core": 3,
+    "default_core_plus_seeds": 3,
+    "edges": 2,
+    "exclude": 0,
+    "full_text_stored": 0,
+    "full_text_works": 3,
+    "fulltext_papers": 3,
+    "global_candidates": 3,
+    "limitations_count": 1,
+    "metadata_papers": 0,
+    "retained": 3,
+    "seeds": 0
+  },
+  "files": {
+    "analytics": "analytics.json",
+    "benchmarks": "benchmarks.json",
+    "counts": "counts.json",
+    "details": [
+      "details/29.json",
+      "details/50.json",
+      "details/ce.json"
+    ],
+    "diff": "diff.json",
+    "exports": {
+      "bibtex": "exports/references.bib",
+      "csl": "exports/references.csl.json",
+      "latex": "exports/references.tex",
+      "markdown": "exports/references.md",
+      "matrixLatex": "exports/matrix.tex",
+      "matrixMarkdown": "exports/matrix.md",
+      "ris": "exports/references.ris"
+    },
+    "graph": "graph.json",
+    "index": "papers-index.json",
+    "matrix": "matrix.json",
+    "ownerSample": "owner-label-sample.csv",
+    "quality": "quality.json",
+    "spotChecks": "spot-checks.json"
+  },
+  "limitations": [
+    "Synthetic fixture; no real papers, citations or research findings."
+  ],
+  "snapshot": {
+    "acquisition_parent": null,
+    "archives": [],
+    "date": "2026-11-01",
+    "id": "synthetic-v1",
+    "parent_hashes": {},
+    "parentage": {
+      "parent_files_sha256": {},
+      "parents": [],
+      "private_parent_inventories": {},
+      "snapshot": null
+    },
+    "parents": [],
+    "previous_snapshot": null
+  }
+}

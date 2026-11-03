@@ -1,0 +1,17 @@
+"""Generate an aggregate report without exporting private source text."""
+import argparse,json
+from pathlib import Path
+from build_strict_facet_snapshot import public_facets
+
+def report(initial,verified):
+ first=json.loads((initial/'evaluation/FACET-EVALUATION.public.json').read_text());last=json.loads((verified/'evaluation/FACET-EVALUATION.public.json').read_text());facets=json.loads((verified/'facets/FACETS.private.json').read_text());public_rows,public_counts,untagged,removed=public_facets(facets,last);n=len(public_rows);defs={x['id']:x['label'] for x in facets['facets']};counts=public_counts;decisions=facets['verification_counts']
+ lines=['# Strict research-facet review','','The initial classifier used Luna on stored title and abstract spans. A second model, GPT-6.1 Sol, reviewed every proposed tag. Unsupported and uncertain tags were excluded from navigation but remain in the private audit. Every retained source span was matched against its original stored title or abstract. Exact matching does not verify topical relevance.','','The first 30-positive sample per changed facet was reviewed by Sol before the full second pass. After that pass, a fresh 30-positive sample per changed facet was reviewed by Luna. The final sample was drawn before conservatively excluding its unsupported and uncertain entries, so its fractions describe the pre-correction set. Because the final reviewer shares a model family with the original classifier, its confirmed fraction is correlated model agreement, not precision against a human-verified ground truth. Uncertain verdicts remain in the denominator. No human accuracy or false-negative rate is claimed.','','| Changed facet | Initial positive tags | Initial sample confirmed by Sol | Retained tags | Final sample confirmed by Luna | Final unsupported | Final uncertain |','| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+ for fid in last['protocol']['facet_ids']:
+  a=first['counts'][fid];b=last['counts'][fid];lines.append(f"| {defs[fid]} | {a['positive_population']} | {a['supported']}/{a['sample']} ({100*a['supported']/a['sample']:.1f}%) | {counts.get(fid,0)} | {b['supported']}/{b['sample']} ({100*b['supported']/b['sample']:.1f}%) | {b['unsupported']} | {b['uncertain']} |")
+ lines+=['','## All facet sizes','','Tags overlap; percentages use the entire retained corpus as denominator.']
+ for f in facets['facets']:
+  k=f['id'];c=counts.get(k,0);lines.append(f"- {f['label']}: {c}/{n} ({100*c/n:.1f}%).")
+ lines += ['',f"No supported tag was retained for {untagged}/{n} records. This is not a judgment that those papers are irrelevant.",f"The sample review excluded {removed} further unconfirmed tag assignments; the original sample and model outputs remain preserved.",f"The second model marked {decisions.get('supported',0)} candidate tags supported, {decisions.get('unsupported',0)} unsupported and {decisions.get('uncertain',0)} uncertain. The last two categories were withheld from the updated navigation.",'','The per-paper sample lists, source links, any permitted short source quotes, deterministic seed and protocol are available in the published facet spot-check pages. The prior 30-item sample and the new sample remain separate. All warnings from the approved preview are preserved.']
+ return '\n'.join(lines)+'\n'
+if __name__=='__main__':
+ p=argparse.ArgumentParser();p.add_argument('--initial',type=Path,required=True);p.add_argument('--verified',type=Path,required=True);a=p.parse_args();print(report(a.initial,a.verified),end='')

@@ -1,0 +1,207 @@
+{
+  "analytics": {
+    "hdbscan_min_cluster_size": 15,
+    "hdbscan_min_samples": 5,
+    "random_seed": 20261101,
+    "related_top_k": 10,
+    "semantic_k": 10,
+    "umap_min_dist": 0.12,
+    "umap_n_neighbors": 20
+  },
+  "api": {
+    "arxiv_min_interval_seconds": 3.1,
+    "openalex_page_size": 200,
+    "s2_page_size": 100,
+    "s2_query_limit": 1000,
+    "transient_attempts": 3
+  },
+  "atlas_id": "agent-memory",
+  "capabilities": [
+    {
+      "definition": "Entries have an explicit contextual applicability scope.",
+      "id": "scoped_storage",
+      "label": "Scoped storage"
+    },
+    {
+      "definition": "An explicit default/exception hierarchy.",
+      "id": "default_exception_hierarchy",
+      "label": "Defaults and exceptions"
+    },
+    {
+      "definition": "Resolve scope conflicts by contextual specificity.",
+      "id": "specificity_resolution",
+      "label": "Specificity resolution"
+    },
+    {
+      "definition": "Preserve exceptions when a broader default is revised.",
+      "id": "exception_persistence",
+      "label": "Exceptions survive revision"
+    },
+    {
+      "definition": "An explicit memory revocation/removal operation.",
+      "id": "revoke",
+      "label": "Revoke"
+    },
+    {
+      "definition": "Promote a memory to a broader or more authoritative scope.",
+      "id": "promote",
+      "label": "Promote"
+    },
+    {
+      "definition": "Specialize memory to a narrower context.",
+      "id": "specialize",
+      "label": "Specialize"
+    },
+    {
+      "definition": "Temporary override with expiry and revert.",
+      "id": "temporary_override_expiry_revert",
+      "label": "Temporary override"
+    },
+    {
+      "definition": "Detect conflicting incomparable context scopes.",
+      "id": "incomparable_conflict_detection",
+      "label": "Incomparable conflicts"
+    },
+    {
+      "definition": "Ask for clarification about applicability or conflicting memories.",
+      "id": "clarification",
+      "label": "Clarification"
+    },
+    {
+      "definition": "Evaluate an exact affected contextual region after revision.",
+      "id": "exact_impact_region_evaluation",
+      "label": "Impact-region evaluation"
+    },
+    {
+      "definition": "Evaluate latent errors or later revisions after memory changes.",
+      "id": "latent_future_revision_evaluation",
+      "label": "Latent/future revision"
+    },
+    {
+      "definition": "A deterministic executor applies memory operations.",
+      "id": "deterministic_executor",
+      "label": "Deterministic executor"
+    },
+    {
+      "definition": "An explicit oracle or ground-truth reference.",
+      "id": "oracle_ground_truth",
+      "label": "Oracle / ground truth"
+    },
+    {
+      "definition": "Explicitly human-written evaluation data.",
+      "id": "human_written_data",
+      "label": "Human-written data"
+    }
+  ],
+  "cutoff": "2026-11-01",
+  "description": "Explore evidence on persistent memory for language-model agents: its scope, revision, governance and evaluation.",
+  "embeddings": {
+    "batch_size": 64,
+    "cache_by_content_hash": true,
+    "dimensions": 256,
+    "document_task": "retrieval.passage",
+    "estimated_tokens_per_minute": 85000,
+    "max_document_chars": 24000,
+    "model": "jina-embeddings-v5-text-small",
+    "normalized": true,
+    "pin_before_first_request": true,
+    "pinned_on": "2026-11-01",
+    "provider": "jina",
+    "query_task": "retrieval.query",
+    "storage_dtype": "float16"
+  },
+  "headline": [
+    "How agents",
+    "remember change."
+  ],
+  "id": "agent-memory",
+  "inclusion_definition": "Include a work whose main contribution studies how LLM-based agents store, revise, govern, retrieve, forget, or evaluate persistent memory across interactions. Include direct methods or theory anchors explicitly used to study that problem. Exclude ordinary model pretraining, hardware memory, generic static-document RAG, and generic personalization without persistent agent memory unless a documented direct-method connection is present.",
+  "keyword_start_year": 2023,
+  "language": "en",
+  "limitations": [
+    "Discovery coverage: this frozen acquisition snapshot is a bounded literature search, not an exhaustive census of agent-memory research.",
+    "Source depth: the acquired evidence consists of abstracts and metadata; no full-text documents were acquired or stored.",
+    "Text permissions: abstracts, extraction quotations and citation contexts are withheld publicly unless permission is verified for the exact source version.",
+    "Screening validation: tier decisions are model labels. Screening precision remains pending real owner labels; the generated owner samples are not a human gold standard.",
+    "Extraction reliability: the second-prompt check measures extraction agreement, often with the same model. Positive-label agreement is substantially lower than overall agreement; neither measure establishes scientific correctness.",
+    "Citation coverage: recorded references and seed-citation contexts are incomplete because provider coverage, page caps, rate limits and unresolved identifiers leave explicit gaps.",
+    "Semantic maps: projected distances, exploratory clusters and generated cluster labels describe text similarity, not evidence support, scientific effect sizes or a validated taxonomy.",
+    "Publication metadata: provider disagreements and preprint/publication versions can produce different dates and identifiers. Timeline dates follow first-public evidence; citation exports prefer verified publication-version metadata.",
+    "Temporal boundary: the snapshot reflects records and source evidence acquired through the stated cutoff. Later publications, corrections and changes are not represented."
+  ],
+  "model": {
+    "fallback_gateway": "9router",
+    "fallback_model": "cx/gpt-6.1-sol",
+    "max_tokens": 6000,
+    "min_seconds": 3.1,
+    "primary_gateway": "9router",
+    "primary_model": "cx/gpt-6-luna[1m]"
+  },
+  "new_queries": [
+    "\"conversational memory\" LLM",
+    "\"memory-augmented\" LLM agent",
+    "\"personal assistant\" memory LLM",
+    "\"user profile\" update LLM",
+    "\"knowledge editing\" agent memory",
+    "\"memory consolidation\" LLM agent",
+    "\"memory poisoning\" agent",
+    "\"episodic memory\" LLM agent",
+    "\"persistent memory\" agent benchmark",
+    "\"memory management\" LLM agent",
+    "\"preference update\" LLM",
+    "\"temporal reasoning\" conversation memory"
+  ],
+  "original_queries": [
+    "LLM agent long-term memory",
+    "memory update conflict LLM agent",
+    "knowledge update conversational memory benchmark",
+    "personalization memory scope preference LLM",
+    "memory governance agent",
+    "belief revision large language model",
+    "defeasible reasoning language model exceptions",
+    "temporal knowledge graph agent memory",
+    "memory deletion forgetting LLM agent",
+    "clarification question ambiguity LLM agent memory"
+  ],
+  "owner_sample_seed": 20261103,
+  "parent_snapshot": "2026-11-01-phase2",
+  "parents": [
+    "2026-11-01-checkpoint-1",
+    "2026-11-01-phase2"
+  ],
+  "project_abstract_placeholder": true,
+  "queries": [
+    "LLM agent long-term memory",
+    "memory update conflict LLM agent",
+    "knowledge update conversational memory benchmark",
+    "personalization memory scope preference LLM",
+    "memory governance agent",
+    "belief revision large language model",
+    "defeasible reasoning language model exceptions",
+    "temporal knowledge graph agent memory",
+    "memory deletion forgetting LLM agent",
+    "clarification question ambiguity LLM agent memory",
+    "\"conversational memory\" LLM",
+    "\"memory-augmented\" LLM agent",
+    "\"personal assistant\" memory LLM",
+    "\"user profile\" update LLM",
+    "\"knowledge editing\" agent memory",
+    "\"memory consolidation\" LLM agent",
+    "\"memory poisoning\" agent",
+    "\"episodic memory\" LLM agent",
+    "\"persistent memory\" agent benchmark",
+    "\"memory management\" LLM agent",
+    "\"preference update\" LLM",
+    "\"temporal reasoning\" conversation memory"
+  ],
+  "reference_route": "https://alimohamadi.me/mbse/",
+  "route": "/agent-memory/",
+  "sample_random_seed": 20261101,
+  "seed_snapshot": "2026-11-01-checkpoint-1",
+  "snapshot": "2026-11-01-final",
+  "snapshot_cutoff": "2026-11-01",
+  "source_max_chars": 60000,
+  "spot_check_seed": 20261104,
+  "tier_batch_size": 24,
+  "title": "Agent Memory Literature Atlas"
+}

@@ -1,0 +1,43 @@
+{
+  "columns": [
+    {
+      "id": "synthetic",
+      "label": "Synthetic page evidence"
+    }
+  ],
+  "rows": {
+    "SYN-001": {
+      "cells": {
+        "synthetic": {
+          "display_allowed": true,
+          "location": "PDF p. 2",
+          "model": "fixed synthetic fixture",
+          "quote": "Episodic retrieval selects a stored observation.",
+          "value": "yes"
+        }
+      }
+    },
+    "SYN-002": {
+      "cells": {
+        "synthetic": {
+          "display_allowed": true,
+          "location": "PDF p. 3",
+          "model": "fixed synthetic fixture",
+          "quote": "An index can locate observations for later use.",
+          "value": "yes"
+        }
+      }
+    },
+    "SYN-003": {
+      "cells": {
+        "synthetic": {
+          "display_allowed": true,
+          "location": "PDF p. 1",
+          "model": "fixed synthetic fixture",
+          "quote": "Evidence records preserve a page reference.",
+          "value": "yes"
+        }
+      }
+    }
+  }
+}

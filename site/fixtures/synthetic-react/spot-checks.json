@@ -1,0 +1,43 @@
+{
+  "available_counts": {
+    "abstract_papers": 3,
+    "adjacent": 0,
+    "analysis_papers": 0,
+    "citation_placeholders": 0,
+    "core": 3,
+    "default_core_plus_seeds": 3,
+    "edges": 2,
+    "exclude": 0,
+    "full_text_stored": 0,
+    "full_text_works": 3,
+    "fulltext_papers": 3,
+    "global_candidates": 3,
+    "limitations_count": 1,
+    "metadata_papers": 0,
+    "retained": 3,
+    "seeds": 0
+  },
+  "owner_sample_seed": 20261103,
+  "requested_per_tier": 30,
+  "samples": {
+    "ADJACENT": [],
+    "CORE": [
+      {
+        "id": "SYN-003",
+        "link": null,
+        "title": "Synthetic evidence records"
+      },
+      {
+        "id": "SYN-001",
+        "link": null,
+        "title": "Synthetic episodic retrieval"
+      },
+      {
+        "id": "SYN-002",
+        "link": null,
+        "title": "Synthetic memory indexing"
+      }
+    ]
+  },
+  "seed": 20261104
+}

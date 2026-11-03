@@ -1,0 +1,18 @@
+{
+  "abstract_papers": 3,
+  "adjacent": 0,
+  "analysis_papers": 0,
+  "citation_placeholders": 0,
+  "core": 3,
+  "default_core_plus_seeds": 3,
+  "edges": 2,
+  "exclude": 0,
+  "full_text_stored": 0,
+  "full_text_works": 3,
+  "fulltext_papers": 3,
+  "global_candidates": 3,
+  "limitations_count": 1,
+  "metadata_papers": 0,
+  "retained": 3,
+  "seeds": 0
+}

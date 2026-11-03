@@ -1,0 +1,66 @@
+group	arxiv_id	input
+A	2609.02265	CAPTURE
+A	2610.25179	PLACE
+A	2609.29144	Scoped-ORC
+A	2607.01071	MemSyco-Bench
+A	2610.38573	CALM
+A	2610.09008	CASK "Whose Memory Is It?"
+A	2509.11145	Text2Mem
+A	2604.15505	PolicyBank
+A	2603.16557	BenchPreS
+A	2602.01146	PersistBench
+A	2608.01679	AuthMem-Bench
+A	2606.25161	TrustMem
+A	2606.08932	NormBench
+A	2604.27960	LLM+ASP
+A	2610.30755	RAW-RAG (naive RAG baseline)
+B	2607.23929	MemTX
+B	2607.27834	MemTxn
+B	2608.03699	TARL
+B	2606.06240	TOKI
+B	2607.12893	MemOps
+B	2608.19564	Remember-Verify-Ask/MCB
+B	2609.38275	U-Fuzz "When Correct Memory Goes Wrong"
+B	2610.08101	Beyond Corrected Memory/CAVERT
+B	2610.22209	FEB-30 "Beyond Downstream QA"
+B	2610.30698	Governance-State Corruption
+B	2608.21867	MemGuard
+B	2607.27773	ChronoMem
+B	2606.15376	CoAgent
+B	2605.14421	MemLineage
+B	2605.06527	STALE
+B	2606.27472	Supersede
+B	2610.18052	Bemula
+B	2610.31366	AfterDeleteBench
+B	2608.10502	rollback repair
+B	2610.10265	"Stale, Misattributed, or Late" (PFM)
+B	2608.01619	StateAuditor
+B	2608.16168	QUMem
+B	2610.38209	Role Grounding Attack
+B	2609.35233	EP-Mem
+C	2310.08560	MemGPT
+C	2504.19413	Mem0
+C	2410.10813	LongMemEval
+C	2402.17753	LoCoMo
+C	2501.13956	Zep
+C	2502.12110	A-MEM
+C	2511.03506	HaluMem
+C		MemoryAgentBench
+C		MemoryArena
+C		LongMemEval-V2
+C		Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers
+C		Agentic Memory: Learning Unified Long-Term and Short-Term Memory Management for Large Language Model Agents
+D	2502.09597	PrefEval
+D	2504.14225	PersonaMem
+E	2307.12976	RippleEdits
+E	2306.07934	BoardgameQA
+E		MQuAKE (Zhong et al., EMNLP 2023)
+F		Alchourron, Gardenfors, Makinson 1985 "On the Logic of Theory Change"
+F		Katsuno and Mendelzon 1991 "On the difference between updating a knowledge base and revising it"
+F		Reiter 1980 "A logic for default reasoning"
+F		Chow 1970 "On optimum recognition error and reject tradeoff"
+F		El-Yaniv and Wiener 2010 "On the Foundations of Noise-Free Selective Classification"
+F		Geirhos et al. 2020 "Shortcut Learning in Deep Neural Networks"
+F		Ribeiro et al. 2020 "Beyond Accuracy: Behavioral Testing of NLP Models with CheckList"
+F		Dror et al. 2018 "The Hitchhiker's Guide to Testing Statistical Significance in Natural Language Processing"
+F		Card et al. 2020 "With Little Power Comes Great Responsibility"

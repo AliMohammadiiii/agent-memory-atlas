@@ -1,0 +1,10 @@
+{
+  "C08": {
+    "arxiv_id": "2507.05257",
+    "discovered_title": "Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions",
+    "discovery_url": "https://arxiv.org/abs/2507.05257",
+    "discovery_retrieved_on": "2026-11-01",
+    "alias_evidence_quote": "We introduce MemoryAgentBench",
+    "note": "Discovery lead only. Resolve the identifier through the stored Semantic Scholar/OpenAlex API responses; preserve the original title-only seed input and flag this alias mapping for owner review."
+  }
+}

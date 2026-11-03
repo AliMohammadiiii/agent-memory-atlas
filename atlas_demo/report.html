@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Atlas synthetic review</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;color:#183039;background:#fafbf9;margin:auto;max-width:960px;padding:1.5rem} h1,h2{line-height:1.2} .tag{color:#275d68;font-weight:700} section{border-top:1px solid #cad8d5;padding:1rem 0} input,button{font:inherit;padding:.55rem;margin:.2rem}button{cursor:pointer} button:focus-visible,input:focus-visible{outline:3px solid #246777} .row{display:flex;flex-wrap:wrap;gap:.5rem} #evidence{padding:1rem;background:white;border:1px solid #cad8d5} small{color:#536a70} </style></head>
+<body><p class="tag">SYNTHETIC DATA · OFFLINE DEMONSTRATION</p><h1>Agent Memory Atlas</h1><p>Fictional papers, pages, vectors and citations. Scores are exact cosine similarity, not scientific findings.</p>
+<section><h2>Search and select</h2><label for="search">Filter paper IDs or evidence text</label><br><input id="search" type="search" autocomplete="off"><div id="results" class="row" aria-live="polite"></div></section>
+<section><h2>Citation graph</h2><p>Directed arrows point from a citing paper to its reference. Select an edge to inspect its source.</p><div id="graph" class="row"></div></section>
+<section><h2>SQLite full-text matches</h2><p>The existing page index retrieves these fictional passages for the fixed query.</p><div id="fts" class="row"></div></section>
+<section><h2>Page evidence</h2><div id="evidence" aria-live="polite">Select a paper or citation.</div></section>
+<section><h2>Export</h2><p>Download the same synthetic report shown here.</p><button id="export" type="button">Download JSON report</button></section>
+<script id="data" type="application/json">__REPORT__</script>
+<script>
+const report = JSON.parse(document.getElementById('data').textContent);
+const results = document.getElementById('results');
+const evidence = document.getElementById('evidence');
+const graph = document.getElementById('graph');
+function selectPaper(id) {
+  const row = report.results.find(item => item.id === id);
+  evidence.textContent = row ? `${row.id} · page ${row.page} · cosine ${row.score}\n${row.text}` : 'Evidence unavailable.';
+  evidence.style.whiteSpace = 'pre-wrap';
+}
+function renderResults() {
+  const query = document.getElementById('search').value.trim().toLowerCase();
+  const matches = report.results.filter(row => `${row.id} ${row.text}`.toLowerCase().includes(query));
+  results.replaceChildren();
+  if (!matches.length) { results.textContent = 'No matching synthetic papers.'; return; }
+  for (const row of matches) {
+    const button = document.createElement('button'); button.type = 'button';
+    button.textContent = `${row.id} · page ${row.page} · ${row.score}`;
+    button.addEventListener('click', () => selectPaper(row.id)); results.append(button);
+  }
+}
+const fts = document.getElementById('fts');
+for (const match of report.fts_results || []) {
+  const button = document.createElement('button'); button.type = 'button';
+  button.textContent = `${match.paper_id} · page ${match.page}`;
+  button.addEventListener('click', () => { evidence.textContent = `${match.paper_id} · page ${match.page}\n${match.text}`; evidence.style.whiteSpace = 'pre-wrap'; });
+  fts.append(button);
+}
+if (!fts.children.length) fts.textContent = 'No full-text matches for this query.';
+for (const edge of report.edges.filter(edge => edge.type === 'citation')) {
+  const button = document.createElement('button'); button.type = 'button';
+  button.textContent = `${edge.source} → ${edge.target}`;
+  button.setAttribute('aria-label', `${edge.source} cites ${edge.target}; inspect source evidence`);
+  button.addEventListener('click', () => selectPaper(edge.source)); graph.append(button);
+}
+if (!graph.children.length) graph.textContent = 'No citations in this snapshot.';
+document.getElementById('search').addEventListener('input', renderResults);
+document.getElementById('export').addEventListener('click', () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify(report, null, 2) + '\n'], {type:'application/json'}));
+  const link = document.createElement('a'); link.href = url; link.download = 'atlas-synthetic-report.json'; link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+renderResults();
+</script></body></html>

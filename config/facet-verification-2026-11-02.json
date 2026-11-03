@@ -1,0 +1,11 @@
+{
+  "batch_size": 25,
+  "classifier_route": "cx/gpt-6-luna[1m]",
+  "classifier_snapshot": "2026-11-02-strict-facets",
+  "inclusion": "Retain a classifier tag only if a separate model identifies an exact title or abstract span as supporting both the frozen facet definition and its status as a central contribution or evaluation target. Unsupported or uncertain tags remain in the private audit and are excluded from the navigation facets.",
+  "interpretation": "A second model review is not a human ground truth. Retained tags remain unverified and the original classifier output is preserved.",
+  "name": "strict-facet-full-validation-v1",
+  "request_start_policy": "Three workers share one rate lock and the same minimum interval between request starts; parallelism overlaps model response latency.",
+  "verifier_route": "cx/gpt-6.1-sol",
+  "workers": 3
+}

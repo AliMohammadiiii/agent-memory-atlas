@@ -1,0 +1,29 @@
+data/raw/
+data/private/
+data/**/downloaded-fulltexts/
+site/dist/
+__pycache__/
+*.pyc
+.env
+*.env
+
+# Source repository boundary: live corpora and runtime state stay external.
+data/
+site/public/data/
+node_modules/
+.venv/
+.pytest_cache/
+.env.*
+!.env.example
+*.sqlite
+*.sqlite3
+*.db
+*.log
+.DS_Store
+._*
+.impeccable/
+
+# Local Python distribution build products
+build/
+*.egg-info/
+dist/

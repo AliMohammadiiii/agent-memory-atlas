@@ -1,0 +1,51 @@
+{
+  "edges": [
+    {
+      "source": "SYN-001",
+      "target": "SYN-002",
+      "type": "citation",
+      "weight": 1
+    },
+    {
+      "source": "SYN-002",
+      "target": "SYN-003",
+      "type": "citation",
+      "weight": 1
+    }
+  ],
+  "method": {
+    "acquisition_diagnostics": {},
+    "counts_scope": "Snapshot counts cover all retained CORE+ADJACENT; default view is CORE+seeds. Map counters describe current filters.",
+    "embedding_tier_agreement": {
+      "status": "not available"
+    },
+    "full_text_scope": "Full-text evidence counts use recorded evidence_level only; open-access links do not imply text was read or stored.",
+    "privacy_withholding": {
+      "abstracts_withheld": 0,
+      "rule": "Whole public abstract or evidence text fields containing an IPv4 address are withheld; private source text is unchanged. This is separate from permission withholding."
+    },
+    "screening": {
+      "status": "not available"
+    }
+  },
+  "nodes": [
+    {
+      "id": "SYN-001",
+      "tier": "CORE",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "SYN-002",
+      "tier": "CORE",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "SYN-003",
+      "tier": "CORE",
+      "x": 2,
+      "y": 0
+    }
+  ]
+}

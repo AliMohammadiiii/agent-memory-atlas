@@ -1,0 +1,42 @@
+{
+  "id": "clustering-study-2026-11-02",
+  "parent_snapshot": "2026-11-01-final",
+  "input": "Existing normalized 256-dimensional Jina vectors; no re-embedding or corpus changes",
+  "random_seed": 20261102,
+  "subsample_seeds": [101, 102, 103],
+  "subsample_fraction": 0.8,
+  "silhouette_sample_size": 1200,
+  "pipelines": [
+    {"id":"baseline", "family":"hdbscan", "space":"original", "min_cluster_size":15, "min_samples":5, "selection":"eom"},
+    {"id":"pca50-density", "family":"hdbscan", "space":"pca50", "min_cluster_size":15, "min_samples":5, "selection":"eom"},
+    {"id":"umap10-density", "family":"hdbscan", "space":"umap10", "min_cluster_size":15, "min_samples":5, "selection":"eom"},
+    {"id":"umap10-leaf", "family":"hdbscan", "space":"umap10", "min_cluster_size":15, "min_samples":5, "selection":"leaf"},
+    {"id":"leiden15-r1", "family":"leiden", "neighbors":15, "resolution":1.0},
+    {"id":"leiden15-r15", "family":"leiden", "neighbors":15, "resolution":1.5},
+    {"id":"leiden30-r1", "family":"leiden", "neighbors":30, "resolution":1.0},
+    {"id":"leiden30-r15", "family":"leiden", "neighbors":30, "resolution":1.5},
+    {"id":"kmeans12", "family":"kmeans", "clusters":12},
+    {"id":"kmeans24", "family":"kmeans", "clusters":24}
+  ],
+  "umap": {"n_components":10,"n_neighbors":30,"min_dist":0.0,"metric":"cosine","n_jobs":1,"init":"random"},
+  "leiden_graph": "Undirected union kNN from original cosine similarities; edge weight=max(cosine,0)^2; RBConfigurationVertexPartition; isolated nodes stay unassigned",
+  "selection": {
+    "minimum_coverage":0.7,
+    "minimum_clusters":3,
+    "maximum_clusters":60,
+    "maximum_cluster_fraction":0.5,
+    "minimum_original_cosine_silhouette":0.0,
+    "minimum_joint_assignment_fraction":0.6,
+    "score":"0.5*median_joint_assigned_ARI + 0.25*original_15NN_label_agreement + 0.25*((original_cosine_silhouette+1)/2)",
+    "tie_break":"pipeline id lexical order",
+    "no_eligible_pipeline":"keep baseline; publish failed eligibility explicitly"
+  },
+  "interpretation": "Unsupervised exploratory comparison, not human-validated taxonomy. Coverage is not accuracy. Graph/centroid partitions assign most points by construction; their assignment counts are not density-confidence estimates. Report all pipelines, noise, singleton/giant groups, original-space metrics, complete and jointly assigned subsample agreement. Do not select parameters from the final map.",
+  "sources":[
+    "https://hdbscan.readthedocs.io/en/latest/faq.html",
+    "https://umap-learn.readthedocs.io/en/latest/clustering.html",
+    "https://maartengr.github.io/BERTopic/getting_started/dim_reduction/dim_reduction.html",
+    "https://arxiv.org/abs/1810.08473",
+    "https://leidenalg.readthedocs.io/en/stable/intro.html"
+  ]
+}

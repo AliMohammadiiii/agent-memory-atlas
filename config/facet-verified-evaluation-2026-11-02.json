@@ -1,0 +1,23 @@
+{
+  "classifier_route": "cx/gpt-6-luna[1m]",
+  "evidence": "Each judgment sees the original stored title and abstract as numbered exact spans, the frozen facet definition and the classifier evidence span. Positive reviewer judgments must identify a valid original span. The output is private except for IDs, titles, verdicts, exact permitted short source quotes and aggregate counts.",
+  "facet_ids": [
+    "scope",
+    "temporal",
+    "governance",
+    "memory_architecture",
+    "retrieval_method"
+  ],
+  "labels": [
+    "supported",
+    "unsupported",
+    "uncertain"
+  ],
+  "name": "verified-facet-positive-resample-v1",
+  "reviewer_route": "cx/gpt-6-luna[1m]",
+  "sample_size_per_facet": 30,
+  "sampling": "Uniform random sample without replacement from positive tags in each facet, ordered by paper ID before selection; use SHA-256 of facet ID and the fixed seed to seed an independent Python random generator.",
+  "seed": 20261104,
+  "uncertain_denominator_policy": "Count uncertain as unconfirmed in the conservative confirmed fraction and report separately. The resampling reviewer is the same model family as the original classifier, although different from the second-stage verifier; this is correlated model agreement, not human-verified precision.",
+  "verifier_route": "cx/gpt-6.1-sol"
+}

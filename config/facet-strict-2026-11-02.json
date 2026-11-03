@@ -1,0 +1,96 @@
+{
+  "edge_cap_per_type": 300,
+  "facet_batch_size": 20,
+  "facet_spotcheck_seed": 20261103,
+  "facet_spotcheck_size": 30,
+  "facets": [
+    {
+      "definition": "As a main contribution or evaluation target: Persistent memory updates, supersession, conflict resolution or versioning.",
+      "id": "revision",
+      "label": "Revision and update semantics",
+      "pattern": "revis|updat|supersed|conflict|version"
+    },
+    {
+      "definition": "Memory content whose validity explicitly depends on context, user, role, situation or ownership, including defaults with exceptions. Document-region retrieval scope alone does not qualify.",
+      "id": "scope",
+      "label": "Scope and context",
+      "pattern": "scop|contextual|preference|default|exception|ownership|whose memory"
+    },
+    {
+      "definition": "Explicit validity intervals, time-bounded facts, expiry, temporary validity or versioned time for memory. A generic timeline, temporal coherence or timing of computation does not qualify.",
+      "id": "temporal",
+      "label": "Temporal validity and expiry",
+      "pattern": "temporal|expir|stale|time.valid|temporary|outdated"
+    },
+    {
+      "definition": "As a main contribution or evaluation target: Persistent memory deletion, revocation, forgetting or removal of derived memory.",
+      "id": "forgetting",
+      "label": "Forgetting and deletion",
+      "pattern": "forget|delet|revok|unlearn|eras"
+    },
+    {
+      "definition": "Explicit memory write or admission policy, memory provenance tracking or memory audit. General agent authorization or AI governance without memory-specific policy does not qualify.",
+      "id": "governance",
+      "label": "Governance, admission and provenance",
+      "pattern": "govern|admission|provenance|lineage|authorit|permission|trust|verif"
+    },
+    {
+      "definition": "As a main contribution or evaluation target: Security of agent memory, poisoning, adversarial manipulation, attacks or leakage.",
+      "id": "security",
+      "label": "Security and poisoning",
+      "pattern": "secur|poison|attack|adversar|leak|inject"
+    },
+    {
+      "definition": "As a main contribution or evaluation target: Benchmarks and methods evaluating persistent agent memory, including state-level evaluation.",
+      "id": "evaluation",
+      "label": "Evaluation methodology",
+      "pattern": "evaluat|benchmark|test|oracle|ground.truth|state.level|metric"
+    },
+    {
+      "definition": "A proposed, analyzed or evaluated persistent agent-memory architecture, storage organization or consolidation mechanism as a main contribution or evaluation target. Generic agent architecture with memory as a component does not qualify.",
+      "id": "memory_architecture",
+      "label": "Memory architecture",
+      "pattern": "memory.{0,35}(architect|system|storage|consolidat)|architect.{0,35}memory|memor(y|ies).{0,35}(structure|organis|organiz)"
+    },
+    {
+      "definition": "A proposed, analyzed or evaluated method for retrieving persistent agent memory as a main contribution or evaluation target. Merely using a retrieval system or mentioning retrieval does not qualify.",
+      "id": "retrieval_method",
+      "label": "Retrieval method",
+      "pattern": "retriev|search|recall|rank|index|query"
+    },
+    {
+      "definition": "As a main contribution or evaluation target: Asking for clarification or abstaining when persistent memory is ambiguous, conflicting or unsupported.",
+      "id": "clarification",
+      "label": "Clarification and abstention",
+      "pattern": "clarif|abstain|abstention|unanswerable|ask.question|reject.option"
+    }
+  ],
+  "id": "strict-main-contribution-facets-2026-11-02",
+  "inclusion": "A facet is eligible only when the title or abstract explicitly identifies it as a main contribution or evaluation target; incidental background, examples or an application domain are insufficient. Each positive tag must cite an exact supplied title or abstract sentence.",
+  "layout": {
+    "lower_quantile": 0.01,
+    "preserve_aspect": true,
+    "small_label_minimum": 5,
+    "upper_quantile": 0.99
+  },
+  "max_model_workers": 2,
+  "public_quote_max_words": 25,
+  "publication": "approval required; live site unchanged",
+  "recall_limit": "A not-stated matrix cell means no supporting passage found in the supplied retrieval context, not proof of absence.",
+  "sampling": {
+    "budget": 250,
+    "increase_budget_if_infeasible": true,
+    "minimum_per_cluster": 5,
+    "recency_fraction": 0.2,
+    "share_tolerance": 0.03
+  },
+  "snapshot": "2026-11-02-strict-facets",
+  "stability_metric": "Pairwise adjusted Rand index across five full-data fits (10 pairs); also report jointly assigned denominators and noise-confounded all-paper ARI.",
+  "stability_seeds": [
+    20261102,
+    20261103,
+    20261104,
+    20261105,
+    20261106
+  ]
+}

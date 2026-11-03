@@ -1,0 +1,1 @@
+{"clusters":[],"edges":[{"source":"SYN-001","target":"SYN-002","type":"citation","weight":1},{"source":"SYN-002","target":"SYN-003","type":"citation","weight":1}],"method":{},"methods":{},"nodes":[{"id":"SYN-001","tier":"CORE","x":0,"y":0},{"id":"SYN-002","tier":"CORE","x":1,"y":1},{"id":"SYN-003","tier":"CORE","x":2,"y":0}]}

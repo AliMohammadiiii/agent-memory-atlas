@@ -1,0 +1,12 @@
+{
+  "name": "strict-facet-positive-sample-v1",
+  "facet_ids": ["scope", "temporal", "governance", "memory_architecture", "retrieval_method"],
+  "sample_size_per_facet": 30,
+  "sampling": "Uniform random sample without replacement from positive tags in each facet, ordered by paper ID before selection; use SHA-256 of facet ID and the fixed seed to seed an independent Python random generator.",
+  "seed": 20261103,
+  "reviewer_route": "cx/gpt-6.1-sol",
+  "classifier_route": "cx/gpt-6-luna[1m]",
+  "labels": ["supported", "unsupported", "uncertain"],
+  "uncertain_denominator_policy": "Count uncertain as unconfirmed in the conservative confirmed fraction and report separately. The model reviewer is not a human ground truth; report model agreement, not validated real-world precision.",
+  "evidence": "Each judgment sees the original stored title and abstract as numbered exact spans, the frozen facet definition and the classifier evidence span. Positive reviewer judgments must identify a valid original span. The output is private except for IDs, titles, verdicts, exact permitted short source quotes and aggregate counts."
+}

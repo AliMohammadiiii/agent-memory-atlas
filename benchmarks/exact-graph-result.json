@@ -1,0 +1,29 @@
+{
+  "generator": "numpy default_rng seed 20261103, normal, L2 normalized",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "rows": [
+    {
+      "n": 128,
+      "dimensions": 32,
+      "edges": 745,
+      "seconds": 0.0055,
+      "peak_rss_bytes": 37961728
+    },
+    {
+      "n": 512,
+      "dimensions": 32,
+      "edges": 2968,
+      "seconds": 0.084,
+      "peak_rss_bytes": 38797312
+    },
+    {
+      "n": 1024,
+      "dimensions": 32,
+      "edges": 5986,
+      "seconds": 0.3781,
+      "peak_rss_bytes": 40468480
+    }
+  ]
+}

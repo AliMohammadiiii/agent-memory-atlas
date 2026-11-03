@@ -1,0 +1,14 @@
+{
+  "additions": [
+    "SYN-001",
+    "SYN-002",
+    "SYN-003"
+  ],
+  "baseline_available": false,
+  "changelog": [
+    "Generated from canonical metadata; removals reflect retained-cohort changes, not retractions."
+  ],
+  "changes": [],
+  "parentage": [],
+  "removals": []
+}

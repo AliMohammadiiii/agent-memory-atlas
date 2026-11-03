@@ -1,0 +1,3 @@
+- [Synthetic episodic retrieval]() (n.d.); CORE
+- [Synthetic memory indexing]() (n.d.); CORE
+- [Synthetic evidence records]() (n.d.); CORE

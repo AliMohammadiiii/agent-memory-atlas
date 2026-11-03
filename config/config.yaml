@@ -1,0 +1,32 @@
+atlas_id: agent-memory
+title: Agent Memory Literature Atlas
+route: /agent-memory/
+language: en
+reference_route: https://alimohamadi.me/mbse/
+snapshot_cutoff: '2026-11-01'
+compute_location: server
+publish_requires_owner_approval: true
+current_checkpoint: 2
+expand_groups: [A, B, C, D, E]
+anchor_only_groups: [F]
+abstract_policy: private_analysis_public_display_requires_content_license
+generation:
+  primary_gateway: 9router
+  primary_route: cx/gpt-6-luna[1m]
+  fallback_gateway: openrouter
+  fallback_route: nvidia/nemotron-3.5-super-vl:free
+  store_questions: false
+embeddings:
+  provider: jina
+  model: jina-embeddings-v5-text-small
+  dimensions: 256
+  document_task: retrieval.passage
+  query_task: retrieval.query
+  normalized: true
+  storage_dtype: float16
+  pinned_on: '2026-11-01'
+  pin_before_first_request: true
+  cache_by_content_hash: true
+  max_document_chars: 24000
+  batch_size: 64
+  estimated_tokens_per_minute: 85000

@@ -1,0 +1,15 @@
+{
+  "fulltext": {
+    "config": "config/fulltext-rag-2026-11-02.json",
+    "enabled": true,
+    "folder_env": "ATLAS_FULLTEXT_DIR"
+  },
+  "model": {
+    "fallback_gateway": "9router",
+    "fallback_model": "cx/gpt-6.1-sol",
+    "max_tokens": 6000,
+    "min_seconds": 3.1,
+    "primary_gateway": "9router",
+    "primary_model": "cx/gpt-6-luna[1m]"
+  }
+}

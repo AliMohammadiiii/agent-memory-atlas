@@ -1,0 +1,6 @@
+#!/bin/sh
+# Local MCP clients start this transport; authentication is provided by SSH.
+set -eu
+: "${ATLAS_SERVER_HOST:?Set ATLAS_SERVER_HOST to your private SSH destination}"
+case "$ATLAS_SERVER_HOST" in -*|*[!A-Za-z0-9.@_-]*) echo 'Invalid private SSH destination' >&2; exit 2;; esac
+exec ssh -T -o LogLevel=ERROR "$ATLAS_SERVER_HOST" 'cd /opt/agent-memory-atlas-review-20261102 && exec /opt/mbse/venv/bin/python server/mcp_runtime.py'
